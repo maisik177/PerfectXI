@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-05",
+  "nodeTests": { "passed": 14, "failed": 0 },
+  "browserStorage": {
+    "origin": "http://127.0.0.1:8174",
+    "dreamIndexedDBAfterReload": "pass",
+    "jsonExPrototypeAfterReload": "pass",
+    "successLocalStorageAfterReload": "pass",
+    "scope": "Synthetic career, actual RPG Maker StorageManager, pako, JsonEx and mobile adapter; isolated test origin"
+  },
+  "browserMatch": {
+    "origin": "http://127.0.0.1:8175",
+    "teams": ["Japan", "Brazil"],
+    "participants": 22,
+    "afterKickoff": { "mode": "ai", "active": "Rivaul" },
+    "laterVisibleState": { "clock": "2:20", "active": "Shun Nitta", "score": "0-0" },
+    "consoleErrorsObserved": [],
+    "scope": "Existing scene methods invoked by development integration probe; ceremony completed programmatically; no input remapping"
+  },
+  "notVerified": ["Complete match", "Manual menu navigation", "Full career season", "Android APK", "Physical phone", "Journey and Dream Team HQ save systems"]
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-07",
+  "version": "0.2.0-alpha2",
+  "nodeTests": { "passed": 23, "failed": 0 },
+  "media": [
+    { "file": "TsubasaOpening1.mp4", "bytes": 25217997, "durationSeconds": 89.27 },
+    { "file": "TsubasaOpening2.mp4", "bytes": 27639068, "durationSeconds": 91.10 }
+  ],
+  "encoding": { "width": 1280, "height": 720, "fps": 30, "h264ProfileId": 66, "h264LevelId": 31, "faststart": true, "audio": "Original AAC stereo 48 kHz copied without re-encoding" },
+  "videoDecode": "Both complete files decoded to null with BlueStacks FFmpeg, exit code 0",
+  "audioDecode": "Both complete AAC tracks decoded and encoded to null with SteelSeries FFmpeg, exit code 0",
+  "androidRuntime": "Not tested: BlueStacks ADB connection refused; user requested fix and APK without emulator test",
+  "pending": ["Both intros play in Android WebView", "Audible synchronized audio", "Natural end returns to title", "Background/resume and skip on Android"],
+  "apk": "Tsubasa-Offline-0.2.0-alpha2.apk",
+  "apkBytes": 1651157237,
+  "sha256": "11494447FE5B6AF12C74A2B1C4EB987E537275F28A000600A6316209B3747340"
+}

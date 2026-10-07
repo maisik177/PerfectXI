@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-06",
+  "target": "BlueStacks Android 11, 127.0.0.1:5555",
+  "webview": "131.0.6778.39",
+  "package": "pl.tsubasa.offline.preview",
+  "version": "0.2.0-alpha1",
+  "sha256": "409D8954BE69BD1F8F3D250C765E69B90DC66FAAACE1E32296E9F495B0967EE2",
+  "initialInstall": "failed -124: resources.arsc compressed",
+  "packagingFix": "Store resources.arsc without compression and align to 4 bytes",
+  "fixedInstall": "Success",
+  "launch": "Status ok, COLD, activity startup 717 ms (not time to game ready)",
+  "observedScreen": "Language selection",
+  "observedGameLog": "Canvas2D willReadFrequently performance warning; no TsubasaWeb errors observed in initial startup capture",
+  "backgroundResume": "Activity resumed successfully; gameplay responsiveness not confirmed",
+  "input": "ADB Enter, long-press Enter and focus tap did not visibly advance language screen",
+  "diagnostics": "diagnostics/20261006-162811-983",
+  "notVerified": [
+    "Main menu",
+    "Android match",
+    "Android save persistence",
+    "Audio",
+    "Physical phone"
+  ],
+  "followup": {
+    "reportedFailure": "Uncaught LoadError: movies/TsubasaOpening1.mp4; missing menu icon paths",
+    "fixes": [
+      "Opening movie errors stop video/audio and continue to title",
+      "Current Modes icons take precedence over archive",
+      "Absent Hall of Fame image uses drawn card"
+    ],
+    "nodeTestsPassed": 17,
+    "updatedSha256": "76DB6FDFCA8DCFD740092ABB75F75840AD9C025EA6D8A69B8BD5DD444BEF0070",
+    "updateInstall": "Success",
+    "updatedRuntime": "PASS: opening movie failure handled after scene change; title rendered; ADB Enter opened Game Modes with Friendlies selected",
+    "screenshot": "diagnostics/bluestacks-2026-10-06/menu.png"
+  }
+}

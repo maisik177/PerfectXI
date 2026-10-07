@@ -1,0 +1,2 @@
+# Install in a Linux virtual environment; not required for Windows preview/tests.
+python-for-android==2026.5.9

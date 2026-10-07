@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-07",
+  "status": "desktop-tested-android-build-blocked",
+  "python": "3.12.14",
+  "serverTests": {
+    "passed": 13,
+    "failed": 0,
+    "transport": "real loopback HTTP"
+  },
+  "preparedFiles": 6662,
+  "assetCopyVerification": "SHA256 of each source and copied asset matched",
+  "browserStorage": {
+    "origin": "http://127.0.0.1:8174",
+    "dreamIndexedDBSurvivesReload": true,
+    "jsonExPrototypeRestored": true,
+    "successLocalStorageSurvivesReload": true,
+    "fixture": "controlled test career; not a full season"
+  },
+  "browserMatch": {
+    "origin": "http://127.0.0.1:8175",
+    "teams": [
+      "Japan",
+      "Brazil"
+    ],
+    "participants": 22,
+    "afterKickoffMode": "ai",
+    "activePlayer": "Rivaul",
+    "consoleErrorsOrWarningsAtCheck": [],
+    "scope": "programmatic scene transitions and kickoff; not manual input or a full match",
+    "laterHttpObservation": {
+      "status": 404,
+      "path": "/img/pictures/Commentator_MisatoAkasaka_Full.png",
+      "impact": "not verified beyond kickoff smoke test"
+    }
+  },
+  "javaVariant": "native sources, builder, signing key and APK files not modified",
+  "androidApkBuilt": false,
+  "androidTested": false,
+  "blocker": "No installed WSL/Linux or Docker build environment; p4a/Linux SDK/NDK prerequisites unavailable",
+  "remaining": [
+    "Build Python APK on Linux and verify packaging",
+    "Test PyJNIus WebView settings and lifecycle on Android",
+    "Test movies, audio, back navigation and app resume",
+    "Measure first-launch extraction and storage use",
+    "Play a full match and verify careers and APK updates",
+    "Java-to-Python save migration is not implemented"
+  ],
+  "stage": "stage-lrfaj88q",
+  "sourceSyntax": "passed",
+  "preservedFiles": [
+    {
+      "path": "native\\src\\pl\\tsubasa\\offline\\preview\\MainActivity.java",
+      "sha256": "bdd0a4d8cc22c19fa27fc687de4ecd5bd3fa50971bb9226c80d971dff45f114b"
+    },
+    {
+      "path": "tools\\build-apk.ps1",
+      "sha256": "5572e3e047f3edaea55c032853f55fe62e0ba361eb5f520bf6bff71d169f8fb2"
+    }
+  ]
+}
