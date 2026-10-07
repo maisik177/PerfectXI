@@ -1,0 +1,38 @@
+<!doctype html><meta charset="utf-8"><title>Mobile storage verification</title>
+<style>body{font:18px system-ui;background:#18212b;color:white;padding:24px}pre{white-space:pre-wrap}</style>
+<h1>Mobile storage verification</h1><pre id="result">Running…</pre>
+<script src="/js/libs/pixi.js"></script><script src="/js/libs/pako.min.js"></script>
+<script src="/js/libs/localforage.min.js"></script><script src="/js/rmmz_core.js"></script>
+<script src="/js/rmmz_managers.js"></script>
+<script>
+var TsubasaMobile = {};
+var $dataSystem = {advanced:{gameId:8174001}};
+var $gameSystem;
+function MobileProbeState(){this._soccerDream={name:'Browser fixture',day:7,season:2};}
+MobileProbeState.prototype.onBeforeSave=function(){};
+MobileProbeState.prototype.marker=function(){return 'prototype restored';};
+$gameSystem=new MobileProbeState();
+var Soccer={Dream:{SAVE_KEY:'__mobile_probe_dream',get:()=>$gameSystem._soccerDream},Success:{MAX_SLOTS:3,get:()=>$gameSystem._soccerDream}};
+DataManager.makeSaveContents=()=>({system:$gameSystem});
+</script>
+<script src="/js/plugins/Tsubasa_MobileStorage.js"></script>
+<script>
+(async()=>{
+  if(location.port!=='8174') throw Error('Use isolated test origin on port 8174');
+  await localforage.setDriver(localforage.INDEXEDDB);
+  const stage=new URLSearchParams(location.search).get('stage');
+  if(stage!=='read'){
+    if(!await Soccer.Dream.saveCareer()) throw Error('Dream save returned false');
+    if(!Soccer.Success.saveToSlot(1)) throw Error('Success save returned false');
+    sessionStorage.setItem('__mobile_probe_reload','yes');
+    location.replace('/__storage-test.html?stage=read');
+    return;
+  }
+  if(sessionStorage.getItem('__mobile_probe_reload')!=='yes') throw Error('Missing write phase');
+  const loaded=await StorageManager.loadObject(Soccer.Dream.SAVE_KEY);
+  if(loaded.system.marker()!=='prototype restored'||loaded.system._soccerDream.savedAtDay!==7) throw Error('Dream data or prototype mismatch');
+  const slots=Soccer.Success.loadSlots();
+  if(slots[1]?.name!=='Browser fixture'||slots[1]?.slot!==1) throw Error('Success mismatch');
+  document.getElementById('result').textContent='PASS: Dream — IndexedDB write and read after page reload.\nPASS: JsonEx restores object prototype and saved day.\nPASS: Success — localStorage slot survives page reload.\nNo Node.js filesystem used. Test data stays on isolated port 8174.';
+})().catch(e=>{document.getElementById('result').textContent='FAIL: '+e.stack;});
+</script>
