@@ -63,7 +63,7 @@ if (!(Test-Path -LiteralPath $key)) {
     & (Join-Path $Jdk 'bin\keytool.exe') -genkeypair -keystore $key -storepass android -keypass android -alias alpha -keyalg RSA -keysize 2048 -validity 10000 -dname 'CN=Tsubasa Offline Local Alpha'
     Check-Exit 'Local alpha signing key'
 }
-$apk=Join-Path $dist 'Tsubasa-Offline-0.2.0-alpha2.apk'
+$apk=Join-Path $dist 'Tsubasa-Offline-0.3.0-alpha3.apk'
 & (Join-Path $Jdk 'bin\java.exe') -jar (Join-Path $bt 'lib\apksigner.jar') sign --ks $key --ks-key-alias alpha --ks-pass pass:android --key-pass pass:android --v4-signing-enabled false --out $apk $aligned
 Check-Exit 'APK signing'
 & (Join-Path $Jdk 'bin\java.exe') -jar (Join-Path $bt 'lib\apksigner.jar') verify --verbose --print-certs $apk

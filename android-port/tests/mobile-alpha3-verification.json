@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-07",
+  "version": "0.3.0-alpha3",
+  "nodeTests": {"passed": 30, "failed": 0},
+  "browser": {
+    "origin": "http://127.0.0.1:8175",
+    "viewport": "844x390 CSS pixels",
+    "match": "Japan vs Brazil, 22 participants",
+    "checks": ["Live queue: active plus 3 upcoming", "Original portraits", "Engine stamina, Hyper and Super", "Disabled legal actions", "More panel", "Pause and resume", "Pending field selection", "Confirm commits movement: Shingo Aoi stamina 305 to 303", "Zoom to full pitch", "Pause option labels refresh"],
+    "latestRunNewConsoleErrors": 0,
+    "screenshot": "mobile-alpha3-844x390.png"
+  },
+  "androidRuntime": "not tested",
+  "notVerified": ["Full match", "Full shooting and goalkeeper flows", "Full career", "Physical phone", "Android lifecycle"]
+}

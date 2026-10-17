@@ -1,5 +1,9 @@
 # PerfectXI
 
+**Nowe: mobilne GUI alpha3 (7 października 2026).** Działający HUD meczu,
+wybór pola z potwierdzeniem i dotykowe panele. [Instrukcja i ograniczenia](android-port/MOBILE-ALPHA3.md).
+Poniższe opisy alpha1/alpha2 są historią wcześniejszych wersji.
+
 Android version of Perfect XI — port offline z wariantami **Python + JavaScript**
 oraz **Java + JavaScript**.
 

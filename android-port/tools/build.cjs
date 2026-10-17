@@ -52,10 +52,13 @@ for (const plugin of ctx.$plugins) {
 ctx.$plugins.push({ name: 'Tsubasa_Mobile', status: true, description: 'Android offline adapters', parameters: {} });
 ctx.$plugins.push({ name: 'Tsubasa_MobileStorage', status: true, description: 'Offline career storage', parameters: {} });
 ctx.$plugins.push({ name: 'Tsubasa_MobileIntro', status: true, description: 'Offline mobile intro playback', parameters: {} });
+ctx.$plugins.push({ name: 'Tsubasa_MobileUI', status: true, description: 'Live mobile match HUD', parameters: {} });
 fs.writeFileSync(path.join(output, 'js/plugins.js'), 'var $plugins = ' + JSON.stringify(ctx.$plugins) + ';\n');
 fs.copyFileSync(path.join(root, 'runtime/Tsubasa_Mobile.js'), path.join(output, 'js/plugins/Tsubasa_Mobile.js'));
 fs.copyFileSync(path.join(root, 'runtime/Tsubasa_MobileStorage.js'), path.join(output, 'js/plugins/Tsubasa_MobileStorage.js'));
 fs.copyFileSync(path.join(root, 'runtime/Tsubasa_MobileIntro.js'), path.join(output, 'js/plugins/Tsubasa_MobileIntro.js'));
+fs.copyFileSync(path.join(root, 'runtime/Tsubasa_MobileUI.js'), path.join(output, 'js/plugins/Tsubasa_MobileUI.js'));
+fs.copyFileSync(path.join(root, 'runtime/mobile-ui.css'), path.join(output, 'css/mobile-ui.css'));
 const matchPath = path.join(output, 'js/plugins/Soccer_MatchScene.js');
 let match = fs.readFileSync(matchPath, 'utf8');
 function replaceOnce(before, after) {

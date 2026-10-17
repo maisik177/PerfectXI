@@ -5,7 +5,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $project = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
-if (!$Apk) { $Apk = Join-Path $project 'dist\Tsubasa-Offline-0.2.0-alpha2.apk' }
+if (!$Apk) { $Apk = Join-Path $project 'dist\Tsubasa-Offline-0.3.0-alpha3.apk' }
 $Apk = (Resolve-Path -LiteralPath $Apk).Path
 $bt = Join-Path $Sdk 'build-tools\36.0.0'
 & (Join-Path $Jdk 'bin\java.exe') -jar (Join-Path $bt 'lib\apksigner.jar') verify --verbose --print-certs $Apk
@@ -20,7 +20,7 @@ Add-Type -AssemblyName System.IO.Compression
 $zip = [IO.Compression.ZipFile]::OpenRead($Apk)
 try {
     $names = @($zip.Entries | ForEach-Object FullName)
-    foreach ($required in @('AndroidManifest.xml','classes.dex','assets/index.html','assets/js/mobile-assets.js','assets/js/plugins/Tsubasa_Mobile.js','assets/js/plugins/Tsubasa_MobileStorage.js','assets/js/plugins/Tsubasa_MobileIntro.js')) {
+    foreach ($required in @('AndroidManifest.xml','classes.dex','assets/index.html','assets/js/mobile-assets.js','assets/js/plugins/Tsubasa_Mobile.js','assets/js/plugins/Tsubasa_MobileStorage.js','assets/js/plugins/Tsubasa_MobileIntro.js','assets/js/plugins/Tsubasa_MobileUI.js','assets/css/mobile-ui.css')) {
         if ($names -cnotcontains $required) { throw "Missing APK entry: $required" }
     }
     if (@($names | Group-Object -CaseSensitive | Where-Object Count -gt 1).Count) { throw 'Duplicate APK entries' }
