@@ -38,7 +38,7 @@
         if(++ticks<20)return;
         if(sc._awaitingKickoff || !sc._active) throw Error('Kickoff did not activate a player');
         log('PASS: after kickoff, mode='+sc._mode+', active='+(sc._active?.name?.()||'none')+'.');
-        clearInterval(timer);
+        panel.style.display = "none"; clearInterval(timer);
       }
     } catch(e){log('FAIL: '+e.stack);clearInterval(timer);}
   },250);

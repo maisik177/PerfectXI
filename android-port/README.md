@@ -1,5 +1,9 @@
 # Captain Tsubasa — Android offline
 
+**Nowe: mobilne GUI alpha3 (7 października 2026).** Działający HUD meczu,
+wybór pola z potwierdzeniem i dotykowe panele. [Instrukcja i ograniczenia](MOBILE-ALPHA3.md).
+Poniższe opisy alpha1/alpha2 są historią wcześniejszych wersji.
+
 Osobny wariant **Python + JavaScript**: [python-port/README.md](python-port/README.md).
 Ma własny kod serwera, przygotowanie paczki i testy lokalne; APK Python jeszcze nie zbudowano.
 Poniższa dokumentacja i dotychczasowe APK dotyczą zachowanej wersji Java.
@@ -96,5 +100,13 @@ Otwórz `http://127.0.0.1:8174/__storage-test.html` oraz `http://127.0.0.1:8175/
 - Success korzysta z osobnego klucza localStorage, zachowując synchroniczny interfejs istniejących wywołań. Zmiana cache następuje po udanym zapisie; błędne dane nie są zastępowane pustą tablicą. Wyjście i komunikat o usunięciu sprawdzają rezultat operacji.
 - localStorage ma limit pojemności. Przy jego przekroczeniu użytkownik otrzyma komunikat, a dotychczasowy zapis pozostanie. Docelowe duże kariery, importowane portrety i migrację do natywnego magazynu trzeba jeszcze sprawdzić.
 - Zapis należy do konkretnego originu przeglądarki/WebView. Zmiana portu/domeny, wyczyszczenie danych aplikacji lub odinstalowanie może odłączyć/usunąć zapis. Nie wykonano migracji PC → Android ani testu aktualizacji APK.
+
+## Kolejna kolejność prac
+
+1. Przejść ręcznie pełny mecz i powrót do menu; zweryfikować wszystkie tryby offline.
+2. Przetestować pełne kariery, duże zapisy, pozostałe systemy zapisu (Journey, Dream Team HQ) oraz aktualizacje aplikacji.
+3. Sterowanie dotykowe menu, składem i meczem. Aktualny start używa istniejącego sterowania gry.
+4. Sprawdzić instalację i uruchomienie APK w BlueStacks, logi WebView oraz odtwarzanie multimediów z paczki.
+5. Testować na urządzeniu, wraz z blokadą ekranu, powrotem do aplikacji, dźwiękiem i pamięcią.
 
 Nie przenoszono zapisów użytkownika. Bezpieczne obszary ekranu oraz pełna obsługa dotyku pozostają do zrobienia. Działanie pauzy, dźwięku, zapisu i powrotu z tła wymaga testów Androida.
